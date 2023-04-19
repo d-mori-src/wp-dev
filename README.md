@@ -66,6 +66,29 @@ $ git clone https://github.com/d-mori-src/wp-dev.git
 - タクソノミーページ(タクソノミー名: news_tag)
 - タクソノミー 一覧
 
+## 参考のWP設定
+
+### 一般設定
+- サイト言語: 日本語
+- タイムゾーン: 東京
+- 日付形式: 適宜
+- 時刻形式: 適宜
+- 週の始まり: 月曜日
+
+### パーマリンク設定
+- /%postname%/
+
+### TOC+
+- Table of Contents Plusの各種設定
+
+### ACF
+- Advanced Custom Fieldsの各種設定
+
+### CPT UI
+- Custom Post Type UI
+- 投稿タイプの追加と編集: カスタム投稿の設定
+- タクソノミーの追加と編集: タクソノミーの設定
+
 ## おすすめプラグイン(ほぼ必須)
 
 ### Custom Post Type UI
