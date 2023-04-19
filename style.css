@@ -1,0 +1,10 @@
+@charset "utf-8";
+/*
+theme Name: Test
+Author: dai
+Description: original theme
+version： 1.0.0
+*/
+p.clear{
+    clear: both;
+}

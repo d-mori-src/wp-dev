@@ -1,0 +1,165 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: #333;
+}
+
+ul li {
+    list-style: none;
+}
+
+.current {
+    color: red;
+}
+
+.prevLink::before {
+    content: "";
+    display: inline-block;
+    background-image: url("../img/prev.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 20px;
+    height: 20px;
+    position: relative;
+    right: 4px;
+    top: 6px;
+}
+
+.nextLink::after {
+    content: "";
+    display: inline-block;
+    background-image: url("../img/next.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 20px;
+    height: 20px;
+    position: relative;
+    left: 4px;
+    top: 6px;
+}
+
+.wp-block-image {
+    width: 70%;
+    margin: 0 auto;
+}
+.wp-block-image img {
+    height: 200px;
+    -o-object-fit: cover;
+       object-fit: cover;
+}
+
+.rightImage {
+    position: relative;
+    top: 14px;
+    right: 8px;
+}
+
+.leftImage {
+    position: relative;
+    left: 4px;
+}
+
+.wp-block-group .wp-block-group__inner-container {
+    width: 70%;
+    margin: 0 auto;
+}
+.wp-block-group .wp-block-group__inner-container p {
+    font-size: 14px;
+    line-height: 2;
+    margin: 0 0 40px 0;
+}
+
+#toc_container {
+    background: #fff !important;
+    border: 1px solid #333 !important;
+    padding: 40px 40px 20px !important;
+    margin: 0 auto 40px 0 !important;
+    width: 50% !important;
+    display: block !important;
+    font-size: 24px !important;
+}
+#toc_container .toc_title {
+    text-align: left !important;
+    font-weight: 500 !important;
+    margin: 0 0 20px 0 !important;
+    padding: 0;
+}
+#toc_container .toc_toggle {
+    font-weight: 500 !important;
+    font-size: 12px !important;
+}
+#toc_container .toc_toggle a {
+    color: #333;
+    transition: 0.5s;
+}
+#toc_container .toc_toggle a:hover {
+    text-decoration: none;
+    color: red;
+}
+#toc_container .toc_toggle .toc_brackets {
+    display: none;
+}
+#toc_container .toc_list li {
+    font-size: 16px;
+    margin: 0 0 20px 0;
+}
+#toc_container .toc_list li a {
+    color: #333;
+    transition: 0.5s;
+}
+#toc_container .toc_list li a .toc_number {
+    text-align: center;
+    line-height: 1;
+    color: #fff;
+    margin: 0 4px 0 0;
+    position: relative;
+    bottom: 1px;
+}
+#toc_container .toc_list li a .toc_depth_1 {
+    display: inline-block;
+    font-size: 12px;
+    width: 20px;
+    height: 20px;
+    padding: 4px;
+    border-radius: 50%;
+    background: #333;
+}
+#toc_container .toc_list li a .toc_depth_2 {
+    font-size: 12px;
+    color: #333;
+    padding: 2px 6px;
+    border: 1px solid #ccc;
+    background: #fff;
+}
+#toc_container .toc_list li a:hover {
+    text-decoration: none;
+    color: red;
+}
+#toc_container .toc_list li ul {
+    margin: 8px 0 0 30px;
+}
+#toc_container .toc_list li ul li {
+    font-size: 14px;
+    margin: 0;
+}
+
+.termTag a::before {
+    content: "#";
+}
+
+header {
+    background: red;
+}
+
+footer {
+    background: blue;
+}
+
+.active {
+    color: red;
+}
