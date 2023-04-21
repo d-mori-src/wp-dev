@@ -19,4 +19,7 @@
         <li><a href="<?=$site_url;?>">TOP</a></li>
         <li><a href="<?=$site_url;?>/news/">NEWS</a></li>
       </ul>
+
+      <?php get_search_form(); // 検索フォーム(どこでも置ける) ?>
+      
     </header>

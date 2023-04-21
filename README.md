@@ -66,6 +66,17 @@ $ git clone https://github.com/d-mori-src/wp-dev.git
 - タクソノミーページ(タクソノミー名: news_tag)
 - タクソノミー 一覧
 
+### searchform.php
+- 検索フォーム
+- 入れたい場所に設置する
+```php
+<?php get_search_form(); ?>
+```
+
+### search.php
+- 検索のループページ
+- 検索一覧
+
 ## 参考のWP設定
 
 ### 一般設定
