@@ -182,3 +182,18 @@ footer {
     height: auto;
     vertical-align: bottom;
 }
+
+.n2-ss-layer .n2-ss-item-content p {
+    font-size: 12px !important;
+    margin: 24px 0 0 0 !important;
+    background: #fff;
+}
+.n2-ss-layer .n2-ss-item-content p a {
+    color: #0077ff !important;
+    text-decoration: underline !important;
+}
+
+.n2-ss-slider-controls .n2-ss-widget img {
+    width: 40px !important;
+    height: 400px !important;
+}

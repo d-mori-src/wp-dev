@@ -179,3 +179,28 @@ footer { background: blue; }
         vertical-align: bottom;
     }
 }
+
+// [プラグイン]Smart Slider 3のスタイル設定
+// キャプション
+.n2-ss-layer {
+    .n2-ss-item-content {
+        p {
+            font-size: 12px !important;
+            margin: 24px 0 0 0 !important;
+            background: #fff;
+            a {
+                color: #0077ff !important;
+                text-decoration: underline !important;
+            }
+        }
+    }
+}
+// 矢印
+.n2-ss-slider-controls {
+    .n2-ss-widget {
+        img {
+            width: 40px !important;
+            height: 400px !important;
+        }
+    }
+}
