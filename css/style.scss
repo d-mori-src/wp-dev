@@ -185,11 +185,8 @@ footer { background: blue; }
 .n2-ss-layer {
     .n2-ss-item-content {
         p {
-            font-size: 12px !important;
             margin: 24px 0 0 0 !important;
-            background: #fff;
             a {
-                color: #0077ff !important;
                 text-decoration: underline !important;
             }
         }
@@ -200,7 +197,7 @@ footer { background: blue; }
     .n2-ss-widget {
         img {
             width: 40px !important;
-            height: 400px !important;
+            height: 40px !important;
         }
     }
 }
