@@ -5,7 +5,13 @@
 
 <?php get_header(); ?>
     <h1><?php the_title(); ?></h1>
-    <?php the_post_thumbnail('full');?> 
+
+    <!-- タイトルとアイキャッチの自動生成 -->
+    <div class="thumbnailWrap">
+        <h2><?php the_title(); ?></h2>
+        <?php the_post_thumbnail('full');?> 
+    </div>
+
     <?php the_content(); ?>
     <a href="<?=$site_url?>">← ホームへ</a>
 <?php get_footer(); ?>
