@@ -5,6 +5,12 @@
 ?>
 
 <?php get_header(); ?>
+
+    <!-- お気に入りボタン -->
+    <div class="favoriteButton" data-pageid="<?php the_ID(); ?>">
+        <button class="favoriteButtonIn"><p><i class="far fa-bookmark"></i>&nbsp;記事を保存</p></button>
+    </div>
+
     <div class="termTag">
         <?php echo get_the_term_list($post->ID,'news_tag'); ?>
     </div>
@@ -12,7 +18,6 @@
     <?php the_post_thumbnail('thumbnail'); ?>
     <?php the_content(); ?>
     <a href="<?=$site_url?>/news">← ニュース一覧へ</a>
-
     
     <!-- 関連記事 -->
     <?php

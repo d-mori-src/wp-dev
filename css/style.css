@@ -1,3 +1,4 @@
+@charset "UTF-8";
 * {
     margin: 0;
     padding: 0;
@@ -193,4 +194,34 @@ footer {
 .n2-ss-slider-controls .n2-ss-widget img {
     width: 40px !important;
     height: 40px !important;
+}
+
+.favoriteButton {
+    text-align: center;
+}
+
+.favoriteButtonIn {
+    padding: 12px 24px;
+    cursor: pointer;
+    border-radius: 4px;
+    background: #f2f0f0;
+    border: none;
+}
+.favoriteButtonIn p {
+    display: inline-block;
+    font-size: 14px;
+    margin: 0;
+}
+
+.is-choosen .favoriteButtonIn {
+    color: #fff;
+    background: #ffb06b;
+}
+.is-choosen .favoriteButtonIn p {
+    font-size: 0;
+}
+.is-choosen .favoriteButtonIn p:before {
+    content: "\f02e  保存済み";
+    font-size: 14px;
+    font-family: "Font Awesome 5 Free";
 }

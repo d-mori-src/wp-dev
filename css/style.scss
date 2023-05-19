@@ -201,3 +201,34 @@ footer { background: blue; }
         }
     }
 }
+
+// お気に入り機能
+.favoriteButton {
+    text-align: center;
+}
+.favoriteButtonIn {
+    padding: 12px 24px;
+    cursor: pointer;
+    border-radius: 4px;
+    background: #f2f0f0;
+    border: none;
+    p {
+        display: inline-block;
+        font-size: 14px;
+        margin: 0;
+    }
+}
+.is-choosen {
+    .favoriteButtonIn {
+        color: #fff;
+        background: #ffb06b;
+        p {
+            font-size: 0;
+            &:before { 
+                content: "\f02e  保存済み";
+                font-size: 14px;
+                font-family: "Font Awesome 5 Free";
+            }
+        }
+    }
+}
