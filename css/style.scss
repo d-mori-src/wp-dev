@@ -232,3 +232,38 @@ footer { background: blue; }
         }
     }
 }
+
+// [プラグイン]wpulike
+.wpulike {
+    .wp_ulike_general_class {
+        display: flex;
+        flex-direction: column;
+        .wp_ulike_btn {
+            box-shadow: none;
+            border: 1px solid #E5E5E5;
+            width: 40px;
+            height: 40px;
+            .wpulike-svg-heart {
+                width: 16px;
+                fill: #ccc;
+            }
+        }
+        .wp_ulike_btn_is_active {
+            background: #333 !important;
+        }
+        .count-box {
+            font-size: 12px;
+            font-family: "Poppins", sans-serif;
+        }
+    }
+    .wp_ulike_is_liked {
+        .count-box {
+            color: #333;
+        }
+    }
+    .wp_ulike_is_unliked {
+        .count-box {
+            color: #ccc;
+        }
+    }
+}

@@ -225,3 +225,31 @@ footer {
     font-size: 14px;
     font-family: "Font Awesome 5 Free";
 }
+
+.wpulike .wp_ulike_general_class {
+    display: flex;
+    flex-direction: column;
+}
+.wpulike .wp_ulike_general_class .wp_ulike_btn {
+    box-shadow: none;
+    border: 1px solid #E5E5E5;
+    width: 40px;
+    height: 40px;
+}
+.wpulike .wp_ulike_general_class .wp_ulike_btn .wpulike-svg-heart {
+    width: 16px;
+    fill: #ccc;
+}
+.wpulike .wp_ulike_general_class .wp_ulike_btn_is_active {
+    background: #333 !important;
+}
+.wpulike .wp_ulike_general_class .count-box {
+    font-size: 12px;
+    font-family: "Poppins", sans-serif;
+}
+.wpulike .wp_ulike_is_liked .count-box {
+    color: #333;
+}
+.wpulike .wp_ulike_is_unliked .count-box {
+    color: #ccc;
+}

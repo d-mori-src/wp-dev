@@ -11,6 +11,9 @@
         <button class="favoriteButtonIn"><p><i class="far fa-bookmark"></i>&nbsp;記事を保存</p></button>
     </div>
 
+    <!-- いいねボタン -->
+    <?php echo do_shortcode('[wp_ulike]'); ?>
+
     <div class="termTag">
         <?php echo get_the_term_list($post->ID,'news_tag'); ?>
     </div>
