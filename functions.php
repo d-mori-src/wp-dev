@@ -55,6 +55,22 @@ function getPostViews($postID) {
   return $count;
 }
 remove_action( 'wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0);
+// PVオールリセット
+// function resetAllNewsViews() {
+//   $args = array(
+//       'post_type' => 'news',
+//       'posts_per_page' => -1
+//   );
+
+//   $news_posts = get_posts($args);
+
+//   foreach ($news_posts as $news_post) {
+//       $postID = $news_post->ID;
+//       $count_key = 'post_views_count';
+//       delete_post_meta($postID, $count_key);
+//   }
+// }
+// resetAllNewsViews();
 
 // functions切り離す場合
 // get_template_part('functions/***');
