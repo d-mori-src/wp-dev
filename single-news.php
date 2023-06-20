@@ -21,6 +21,13 @@
     <?php the_post_thumbnail('thumbnail'); ?>
     <?php the_content(); ?>
     <a href="<?=$site_url?>/news">← ニュース一覧へ</a>
+
+    <?php
+        // 記事のビュー数を更新(ログイン中・クローラーは除外)
+        if (!is_user_logged_in() && !is_robots()) {
+            setPostViews(get_the_ID());
+        }
+    ?>
     
     <!-- 関連記事 -->
     <?php

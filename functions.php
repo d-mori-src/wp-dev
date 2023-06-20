@@ -29,6 +29,33 @@ function news_rewrite_rules_array( $rules ) {
 }
 add_filter( 'rewrite_rules_array', 'news_rewrite_rules_array' );
 
+// ランキング機能
+// 記事のPVをカウントする
+function setPostViews($postID) {
+  $count_key = 'post_views_count'; // キーを設定
+  $count = get_post_meta($postID, $count_key, true); // PV数を取得
+  // メタデータの有無で判定
+  if ($count=='') {
+    // メタデータがない時
+    $count = 1; // 初回アクセス時は1からスタート
+    add_post_meta($postID, $count_key, '1'); // カウント1のメタデータを追加
+  } else {
+    // メタデータが既にある時
+    $count++; // PV数を+1する
+    update_post_meta($postID, $count_key, $count); // メタデータを更新する
+  }
+
+  // デバック用
+  // var_dump('postID: '.$postID.' / count: '.$count);
+}
+// PV数を取得する関数
+function getPostViews($postID) {
+  $count_key = 'post_views_count'; // キーを設定
+  $count = get_post_meta($postID, $count_key, true); // PV数を取得
+  return $count;
+}
+remove_action( 'wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0);
+
 // functions切り離す場合
 // get_template_part('functions/***');
 
