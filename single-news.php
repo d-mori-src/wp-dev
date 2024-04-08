@@ -7,12 +7,12 @@
 <?php get_header(); ?>
 
     <!-- お気に入りボタン -->
-    <div class="favoriteButton" data-pageid="<?php the_ID(); ?>">
+    <!-- <div class="favoriteButton" data-pageid="<?php // the_ID(); ?>">
         <button class="favoriteButtonIn"><p><i class="far fa-bookmark"></i>&nbsp;記事を保存</p></button>
-    </div>
+    </div> -->
 
     <!-- いいねボタン -->
-    <?php echo do_shortcode('[wp_ulike]'); ?>
+    <?php // echo do_shortcode('[wp_ulike]'); ?>
 
     <div class="termTag">
         <?php echo get_the_term_list($post->ID,'news_tag'); ?>
@@ -31,33 +31,33 @@
     
     <!-- 関連記事 -->
     <?php
-        $term = array_shift(get_the_terms($post->ID, 'news_cate'));
-        var_dump($term );
-        $news_args = [
-            'post_type' => 'news',
-            'posts_per_page' => 3,
-            'taxonomy' => 'news_cate',
-            'term' => $term->slug,
-            'orderby' => 'rand',
-            'post__not_in' => array($post->ID),
-        ];
-        $news_wp_query = new WP_Query($news_args);
+        // $term = array_shift(get_the_terms($post->ID, 'news_cate'));
+        // var_dump($term );
+        // $news_args = [
+        //     'post_type' => 'news',
+        //     'posts_per_page' => 3,
+        //     'taxonomy' => 'news_cate',
+        //     'term' => $term->slug,
+        //     'orderby' => 'rand',
+        //     'post__not_in' => array($post->ID),
+        // ];
+        // $news_wp_query = new WP_Query($news_args);
     ?>
-    <h3>関連記事</h3>
+    <!-- <h3>関連記事</h3>
     <ul class="items">
-        <?php if ($news_wp_query->have_posts()): ?>
-            <?php while ($news_wp_query->have_posts()): $news_wp_query->the_post(); ?>
+        <?php // if ($news_wp_query->have_posts()): ?>
+            <?php // while ($news_wp_query->have_posts()): $news_wp_query->the_post(); ?>
                 <li>
-                    <a href="<?php the_permalink(); ?>">
-                        <?php the_title(); ?>
-                        <?php the_post_thumbnail('thumbnail'); ?>
+                    <a href="<?php // the_permalink(); ?>">
+                        <?php // the_title(); ?>
+                        <?php // the_post_thumbnail('thumbnail'); ?>
                     </a>
                 </li>
-            <?php endwhile; ?>
-        <?php else: ?>
+            <?php // endwhile; ?>
+        <?php // else: ?>
             関連記事はありません
-        <?php endif; ?>
-    </ul>
+        <?php // endif; ?>
+    </ul> -->
 
 
 <?php get_footer(); ?>

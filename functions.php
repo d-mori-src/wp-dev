@@ -72,25 +72,17 @@ remove_action( 'wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0);
 // }
 // resetAllNewsViews();
 
-// functions切り離す場合
-// get_template_part('functions/***');
-
 // function create_post_type_1() {
 //     register_post_type( 'news', // 投稿タイプ名の定義
 //         array(
 //             'labels' => array(
-//             'name' => __( '新着情報' ), // 表示する投稿タイプ名
-//             'singular_name' => __( '新着情報' )
+//             'name' => __( 'お知らせ' ), // 表示する投稿タイプ名
+//             'singular_name' => __( 'お知らせ' )
 //             ),
 //             'public' => true,
 //             'has_archive' => true,
 //             'menu_position' => 5,
 //             'show_in_rest'  => true,
-
-//             // GlaphQL用設定
-//             'show_in_graphql' => true,
-//             'graphql_single_name' => 'newsItem',
-//             'graphql_plural_name' => 'news'
 //         )
 //     );
 // }
@@ -114,3 +106,21 @@ remove_action( 'wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0);
 //     return $return_rule;
 // }
 // add_filter( 'post_rewrite_rules', 'add_article_post_rewrite_rules' );
+
+
+// 分割したファイルパスを配列に追加
+$function_files = [
+  '/lib/breadcrumb.php',
+];
+foreach ($function_files as $file) {
+  if ((file_exists(__DIR__ . $file))) {
+    locate_template($file, true, true);
+  } else {
+    trigger_error("`$file`ファイルが見つかりません", E_USER_ERROR);
+  }
+}
+
+add_filter('wpcf7_autop_or_not', 'wpcf7_autop_return_false');
+  function wpcf7_autop_return_false() {
+    return false;
+}

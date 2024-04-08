@@ -253,3 +253,42 @@ footer {
 .wpulike .wp_ulike_is_unliked .count-box {
     color: #ccc;
 }
+
+.breadcrumbs {
+    display: flex;
+    align-items: center;
+    gap: 0 20px;
+    width: calc(100% - 100px);
+    max-width: 1100px;
+    margin: 0 auto 100px;
+}
+@media screen and (max-width: 768px) {
+    .breadcrumbs {
+        gap: 0 12px;
+        width: calc(100% - 40px);
+        margin: 0 auto 80px;
+    }
+}
+.breadcrumbs .breadcrumb {
+    font-size: 14px;
+    font-weight: bold;
+}
+@media screen and (max-width: 768px) {
+    .breadcrumbs .breadcrumb {
+        font-size: 12px;
+    }
+}
+.breadcrumbs .active {
+    color: #333;
+}
+.breadcrumbs li img {
+    width: auto;
+    height: 12px;
+}
+@media screen and (max-width: 768px) {
+    .breadcrumbs li img {
+        height: 10px;
+        position: relative;
+        bottom: 1px;
+    }
+}

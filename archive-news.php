@@ -3,11 +3,6 @@
     $site_url = site_url();
 
     $terms = get_terms('news_cate');
-    // echo $term->name;  //ターム名
-    // echo $term->slug;  //スラッグ
-    // echo $term->count; //件数
-    // echo get_term_link($term);
-    // echo get_term_link($term->slug, 'news_cate');
 ?>
 
 <?php get_header(); ?>
@@ -16,7 +11,7 @@
     <ul>
         <li><a class="active" href="<?=$site_url;?>/news/">全て</a></li>
         <?php foreach($terms as $term): ?>
-            <li><a href="<?=get_term_link($term);?>"><?=$term->name;?></a></li>
+            <li><a href="<?php echo get_term_link($term);?>"><?php echo $term->name;?></a></li>
         <?php endforeach; ?>
     </ul>
 
