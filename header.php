@@ -20,6 +20,7 @@
         <li><a href="<?=$site_url;?>">TOP</a></li>
         <li><a href="<?=$site_url;?>/news/">NEWS</a></li>
         <li><a href="<?=$site_url;?>/privacy/">PRIVACY</a></li>
+        <li><a href="<?=$site_url;?>/contact/">CONTACT</a></li>
       </ul>
 
       <?php get_search_form(); // 検索フォーム(どこでも置ける) ?>

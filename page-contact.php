@@ -1,4 +1,8 @@
+<?php session_start(); ?>
 <?php get_header(); ?>
-    お問い合わせ
-    <?php echo do_shortcode('[contact-form-7 id="984044c" title="Contact form"]'); ?>
+
+<main class="underPage contact">
+    <?php get_template_part('lib/form/form'); ?>
+</main>
+
 <?php get_footer(); ?>
