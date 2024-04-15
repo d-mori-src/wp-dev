@@ -1,21 +1,18 @@
 <?php
+    date_default_timezone_set('Asia/Tokyo');
+    mb_language('uni');
+    mb_internal_encoding('UTF-8');
+
+    $esc = [];
+    $flag = 0;
+    $error = [];
+
     require_once 'inc/validation.php';
-
-    $esc = []; // エスケープさせた値を格納するための変数
-    $flag = 0; // 変数（フラグ）の初期化
-    $error = []; // バリデーションエラーを格納するための変数
-
-    // postデータをエスケープして格納
-    if(!empty($_POST)) {
-        foreach($_POST as $key => $value) {
-            $esc[$key] = htmlspecialchars($value, ENT_QUOTES);
-        }
-    }
+    require_once 'inc/escape.php';
 
     // 状況に応じてフラグの切り替え
     if (!empty($esc['confirm'])) {
         // 「確認画面へ」ボタンが押された時の処理
-        //バリデーション
         $error = validation($esc);
         if(empty($error)) {
             $flag = 1;
@@ -27,10 +24,7 @@
         if (!empty($_SESSION['page']) && $_SESSION['page'] === true) {
             // 「送信」ボタンが押された時の処理
             $flag = 2;
-
             require_once 'inc/mail.php';
-
-            // セッション削除
             unset($_SESSION['page']);
         } else {
             $flag = 0;

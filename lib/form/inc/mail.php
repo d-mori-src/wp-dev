@@ -1,12 +1,5 @@
 <?php
 
-// タイムゾーンの設定
-date_default_timezone_set('Asia/Tokyo');
-
-// 使用言語（日本語）の設定
-mb_language('uni'); // mb_language('ja'); だと日本語が表示されない
-mb_internal_encoding('UTF-8');
-
 // 自動返信メール件名
 $reply_subject = "お問い合わせいただきありがとうございます";
 
