@@ -1,5 +1,20 @@
 <?php
 
+// 変数一覧
+$header = null;
+$body = null;
+$reply_subject = null;
+$reply_text = null;
+$notice_subject = null;
+$notice_text = null;
+
+// メールヘッダー情報
+$header = "MIME-Version: 1.0\n";
+$header = "Content-Type: multipart/mixed;boundary=\"__BOUNDARY__\"\n";
+// $header .= "Content-Type: text/plain;charset=UTF-8\n";
+$header .= "From: <example@example.com>\n";
+$header .= "Reply-To: <example@example.com>\n";
+
 // 自動返信メール件名
 $reply_subject = "お問い合わせいただきありがとうございます";
 
@@ -11,16 +26,10 @@ $reply_text .= "お名前：".$esc['fullname']."\n";
 $reply_text .= "メールアドレス：".$esc['email']."\n";
 $reply_text .= "電話番号：".$esc['tel']."\n";
 $reply_text .= "お問い合わせ内容：".$esc['message']."\n\n";
-$reply_text .= "管理人";
-
-// メールヘッダー情報
-$header = "MIME-Version: 1.0\n";
-$header .= "Content-Type: text/plain;charset=UTF-8\n";
-$header .= "From: <example@example.com>\n";
-$header .= "Reply-To: <example@example.com>\n";
+$reply_text .= "送信元: ホームページ管理者<example@example.com>";
 
 // 自動返信メールの送信
-mb_send_mail($esc['email'], $reply_subject, $reply_text, $header);
+mail($esc['email'], $reply_subject, $reply_text, $header);
 
 // 管理者通知メールの件名
 $notice_subject = "ホームページからメッセージがありました";
@@ -35,5 +44,21 @@ $notice_text .= "電話番号：".$esc['tel']."\n";
 $notice_text .= "お問い合わせ内容：".$esc['message']."\n";
 $notice_text .= "プライバシーポリシー：".$esc['agree']."\n";
 
+// テキストメッセージをセット
+$body = "--__BOUNDARY__\n";
+$body .= "Content-Type: text/plain; charset=\"ISO-2022-JP\"\n\n";
+$body .= $notice_text . "\n";
+$body .= "--__BOUNDARY__\n";
+
+// ファイルを添付
+if( !empty($esc['attachment_file']) ) {
+    $body .= "Content-Type: application/octet-stream; name=\"{$esc['attachment_file']}\"\n";
+    $body .= "Content-Disposition: attachment; filename=\"{$esc['attachment_file']}\"\n";
+    $body .= "Content-Transfer-Encoding: base64\n";
+    $body .= "\n";
+    $body .= chunk_split(base64_encode(file_get_contents(FILE_DIR.$esc['attachment_file'])));
+    $body .= "--__BOUNDARY__\n";
+}
+
 // 管理者通知メールの送信
-mb_send_mail('example@example.com', $notice_subject, $notice_text, $header);
+mail('example@example.com', $notice_subject, $body, $header);

@@ -1,5 +1,5 @@
 <section class="form">
-    <form method="post" action="">
+    <form method="post" action="" enctype="multipart/form-data">
         <ul class="formWrap">
             <li class="formSet">
                 <div class="label">選択ボックス</div>
@@ -40,7 +40,13 @@
                     <textarea name="message"><?php if(!empty($esc['message'])) {echo $esc['message'];} ?></textarea>
                     <?php echo !empty($error['message']) ? $error['message'] : ''; ?>
                 </div>
-            </li class="formSet">
+            </li>
+            <li class="formSet">
+                <div class="label">ファイル添付</div>
+                <div class="inputWrap">
+                    <input type="file" name="attachment_file">
+                </div>
+            </li>
         </ul>
 
         <label>

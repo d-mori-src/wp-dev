@@ -1,7 +1,8 @@
 <?php
     date_default_timezone_set('Asia/Tokyo');
-    mb_language('uni');
+    mb_language('ja');
     mb_internal_encoding('UTF-8');
+    define( 'FILE_DIR', './strage/mail/');
 
     $esc = [];
     $flag = 0;
@@ -17,6 +18,16 @@
         if(empty($error)) {
             $flag = 1;
             $_SESSION['page'] = true;
+
+            // ファイルのアップロード
+            if( !empty($_FILES['attachment_file']['tmp_name']) ) {
+                $upload_res = move_uploaded_file( $_FILES['attachment_file']['tmp_name'], FILE_DIR.$_FILES['attachment_file']['name']);
+                if( $upload_res !== true ) {
+                    $error[] = 'ファイルのアップロードに失敗しました。';
+                } else {
+                    $esc['attachment_file'] = $_FILES['attachment_file']['name'];
+                }
+            }
         }
     } elseif (!empty($esc['submit'])) {
         session_start();
