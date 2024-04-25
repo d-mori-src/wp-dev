@@ -10,8 +10,7 @@ $notice_text = null;
 
 // メールヘッダー情報
 $header = "MIME-Version: 1.0\n";
-$header = "Content-Type: multipart/mixed;boundary=\"__BOUNDARY__\"\n";
-// $header .= "Content-Type: text/plain;charset=UTF-8\n";
+$header .= "Content-Type: multipart/mixed;boundary=\"__BOUNDARY__\"\n";
 $header .= "From: <example@example.com>\n";
 $header .= "Reply-To: <example@example.com>\n";
 
@@ -51,14 +50,12 @@ $body .= $notice_text . "\n";
 $body .= "--__BOUNDARY__\n";
 
 // ファイルを添付
-if( !empty($esc['attachment_file']) ) {
-    $body .= "Content-Type: application/octet-stream; name=\"{$esc['attachment_file']}\"\n";
-    $body .= "Content-Disposition: attachment; filename=\"{$esc['attachment_file']}\"\n";
-    $body .= "Content-Transfer-Encoding: base64\n";
-    $body .= "\n";
-    $body .= chunk_split(base64_encode(file_get_contents(FILE_DIR.$esc['attachment_file'])));
-    $body .= "--__BOUNDARY__\n";
-}
+$body .= "Content-Type: application/octet-stream; name=\"{$esc['attachment_file']}\"\n";
+$body .= "Content-Disposition: attachment; filename=\"{$esc['attachment_file']}\"\n";
+$body .= "Content-Transfer-Encoding: base64\n";
+$body .= "\n";
+$body .= chunk_split(base64_encode(file_get_contents(FILE_DIR.$esc['attachment_file'])));
+$body .= "--__BOUNDARY__--";
 
 // 管理者通知メールの送信
 mail('example@example.com', $notice_subject, $body, $header);

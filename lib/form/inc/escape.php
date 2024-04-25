@@ -18,5 +18,5 @@ class escapeValue {
 }
 
 $escaper = new escapeValue();
-$keysToEscape = ['box', 'fullname', 'email', 'tel', 'message', 'agree', 'confirm', 'submit'];
+$keysToEscape = ['box', 'fullname', 'email', 'tel', 'message', 'attachment_file', 'agree', 'confirm', 'submit'];
 $esc = $escaper->escapePost($keysToEscape);

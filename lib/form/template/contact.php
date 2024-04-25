@@ -44,7 +44,7 @@
             <li class="formSet">
                 <div class="label">ファイル添付</div>
                 <div class="inputWrap">
-                    <input type="file" name="attachment_file">
+                    <input type="file" name="attachment_file" class="upload-limit">
                 </div>
             </li>
         </ul>
@@ -58,3 +58,20 @@
         <input type="submit" name="confirm" value="確認画面へ">
     </form>
 </section>
+
+<script>
+    const fileLimit = 1024 * 1024 * 2;
+    const fileUploads = document.querySelectorAll('.upload-limit');
+    fileUploads.forEach(fileUpload => {
+        fileUpload.addEventListener('change', () => {
+            const files = fileUpload.files;
+            for (const file of files) {
+                if (file.size > fileLimit) {
+                    alert('ファイルサイズが2MBを超えています');
+                    fileUpload.value = "";
+                    return;
+                }
+            }
+        })
+    });
+</script>

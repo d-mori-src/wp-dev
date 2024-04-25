@@ -24,11 +24,11 @@
 
             <?php if( !empty($esc['attachment_file']) ): ?>
                 <li class="formSet">
-                <label>画像ファイルの添付</label>
-                <p><?php echo $esc['attachment_file']; ?></p>
+                    <label>画像ファイルの添付</label>
+                    <p><?php echo $esc['attachment_file']; ?></p>
                 </li>
             <?php endif; ?>
-        </ul>  
+        </ul>
 
         <input type="submit" name="back" value="戻る">
         <input type="submit" name="submit" value="送信">

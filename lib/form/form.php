@@ -3,7 +3,7 @@
     mb_language('ja');
     mb_internal_encoding('UTF-8');
     define( 'FILE_DIR', './strage/mail/');
-
+ 
     $esc = [];
     $flag = 0;
     $error = [];
