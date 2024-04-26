@@ -8,8 +8,8 @@
     $flag = 0;
     $error = [];
 
-    require_once 'inc/validation.php';
-    require_once 'inc/escape.php';
+    require_once 'includes/validation.php';
+    require_once 'includes/escape.php';
 
     // 状況に応じてフラグの切り替え
     if (!empty($esc['confirm'])) {
@@ -35,7 +35,7 @@
         if (!empty($_SESSION['page']) && $_SESSION['page'] === true) {
             // 「送信」ボタンが押された時の処理
             $flag = 2;
-            require_once 'inc/mail.php';
+            require_once 'includes/mail.php';
             unset($_SESSION['page']);
         } else {
             $flag = 0;
